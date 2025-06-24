@@ -1,0 +1,49 @@
+# models/customer-churn-prediction-model-v1/catalog-info.yaml
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: customer-churn-prediction-model-v1
+  description: "Scikit-learn Logistic Regression model to predict customer churn."
+  annotations:
+    # Example: Link to your MLflow tracking server for this model run
+    mlflow.org/run-id: "your_mlflow_run_id_here" # Replace with actual ID
+    mlflow.org/experiment-name: "customer-churn-prediction"
+    # Link to the model artifact storage
+    model-artifact/location: "s3://your-org-ml-models/churn-model/v1/model.pkl"
+    backstage.io/techdocs-ref: url:https://your-docs-site.com/models/customer-churn-prediction-model-v1
+  tags:
+    - customer-churn
+    - ml-model
+    - classification
+    - scikit-learn
+spec:
+  type: ml-model # A custom 'type' under the 'Component' kind
+  lifecycle: experimental # Start as experimental, move to production later
+  owner: group:DIES # Replace with an actual Backstage user or group
+  system: customer-intelligence-platform
+  # Establish a dependency on the dataset
+  dependsOn:
+    - resource:default/customer-churn-data-v1 # Default API version for resource kind, and name
+  # Custom attributes for a model
+  modelFramework: scikit-learn
+  modelVersion: 1.0.0
+  modelType: LogisticRegression
+  metrics:
+    accuracy: 0.88
+    precision: 0.85
+    recall: 0.78
+    f1_score: 0.81
+  inputSchema:
+    - name: age
+      type: integer
+    - name: gender
+      type: string
+    - name: subscription_type
+      type: string
+    - name: monthly_charges
+      type: float
+  outputSchema:
+    - name: churn_prediction
+      type: boolean
+    - name: churn_probability
+      type: float

@@ -1,0 +1,43 @@
+# datasets/customer-churn-data-v1/catalog-info.yaml
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: customer-churn-data-v1
+  description: "Dataset containing customer demographics and churn status for churn prediction model training."
+  annotations:
+    # Example: Link to where the data might be stored
+    data-source/location: "s3://your-org-data-lake/customer-churn/v1/data.csv"
+    # Example: Link to any data documentation
+    backstage.io/techdocs-ref: url:https://your-docs-site.com/datasets/customer-churn-data-v1
+  tags:
+    - customer-churn
+    - dataset
+    - raw-data
+    - sales
+spec:
+  type: raw-dataset
+  lifecycle: production
+  owner: group:DIES
+  system: customer-intelligence-platform
+  # Custom attributes for a dataset
+  dataVolumeGB: 0.5 # Example: 500 MB
+  lastUpdated: "2024-06-20T14:30:00Z"
+  schema:
+    - name: customer_id
+      type: string
+      description: Unique identifier for the customer.
+    - name: age
+      type: integer
+      description: Age of the customer.
+    - name: gender
+      type: string
+      description: Customer's gender (Male/Female).
+    - name: subscription_type
+      type: string
+      description: Type of subscription (Basic/Premium).
+    - name: monthly_charges
+      type: float
+      description: Monthly charges for the subscription.
+    - name: churn
+      type: boolean
+      description: Whether the customer churned (True/False).

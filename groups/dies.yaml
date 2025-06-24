@@ -1,0 +1,11 @@
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: DIES
+  description: Divisao de Estrategias de Praticas de IA
+spec:
+  type: team
+  profile:
+    displayName: DIES
+    email: dies@mdataprev.gov.br
+  children: [] # You can list sub-groups here later
