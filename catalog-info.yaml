@@ -1,9 +1,9 @@
 apiVersion: backstage.io/v1alpha1
 kind: Dataset
 metadata:
-  name: Dataset3
-  title: Dataset3
-  description: Descrição3
+  name: Dataset4
+  title: Dataset4
+  description: Descrição4
   annotations:
     github.com/project-slug: joaocvr/ml-catalog-examples
   tags:
@@ -15,13 +15,13 @@ metadata:
 spec:
   type: raw
   format: JSON
-  size: 333MB
+  size: 4444MB
   schema: |
-    Teste schema 3
+    Teste schema 4
   location:
     type: s3
-    bucket: Bucket3
-    path: /datasets/dataset3
+    bucket: Bucket4
+    path: /datasets/dataset4
   owner: deia
   system: OLIMPIA
   lifecycle: production
@@ -30,8 +30,8 @@ spec:
     completeness: 1
     
   provenance:
-    source: Web3
-    version: 1.0.0
+    source: Web4
+    version: 2.0.0
   usage:
-    purpose: propósito 3
-    license: MIT3
+    purpose: propósito 4
+    license: MIT4
