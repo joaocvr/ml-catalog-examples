@@ -1,37 +1,11 @@
 apiVersion: backstage.io/v1alpha1
 kind: Dataset
 metadata:
-  name: Dataset4
-  title: Dataset4
-  description: Descrição4
-  annotations:
-    github.com/project-slug: joaocvr/ml-catalog-examples
-  tags:
-    - ml
-  links:
-    - url: https://github.com/joaocvr/ml-catalog-examples
-      title: Dataset Repository
-      icon: github
+  name: dataset3
+  namespace: default
+  title: "Customer Segmentation Dataset"
+  description: "Training dataset for customer segmentation"
 spec:
-  type: raw
-  format: JSON
-  size: 4444MB
-  schema: |
-    Teste schema 4
-  location:
-    type: s3
-    bucket: Bucket4
-    path: /datasets/dataset4
-  owner: deia
-  system: OLIMPIA
-  lifecycle: production
-  quality:
-    accuracy: 1
-    completeness: 1
-    
-  provenance:
-    source: Web4
-    version: 2.0.0
-  usage:
-    purpose: propósito 4
-    license: MIT4
+  type: "training"
+  format: "CSV"
+  owner: "data-team"
