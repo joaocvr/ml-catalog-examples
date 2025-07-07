@@ -1,9 +1,9 @@
 apiVersion: backstage.io/v1alpha1
 kind: Dataset
 metadata:
-  name: Dataset2
-  title: Dataset2
-  description: Descrição2
+  name: Dataset3
+  title: Dataset3
+  description: Descrição3
   annotations:
     github.com/project-slug: joaocvr/ml-catalog-examples
   tags:
@@ -13,25 +13,25 @@ metadata:
       title: Dataset Repository
       icon: github
 spec:
-  type: production
-  format: TFRecord
-  size: 111MB
+  type: raw
+  format: JSON
+  size: 333MB
   schema: |
-    Definição de schema
+    Teste schema 3
   location:
-    type: gcs
-    bucket: Bucket2
-    path: /datasets/dataset2
+    type: s3
+    bucket: Bucket3
+    path: /datasets/dataset3
   owner: deia
   system: OLIMPIA
-  lifecycle: experimental
+  lifecycle: production
   quality:
-    accuracy: 0.75
-    completeness: 0.65
-    consistency: 0.85
+    accuracy: 1
+    completeness: 1
+    
   provenance:
-    source: Web
+    source: Web3
     version: 1.0.0
   usage:
-    purpose: Treinamento teste
-    license: MIT
+    purpose: propósito 3
+    license: MIT3
