@@ -1,9 +1,9 @@
 apiVersion: backstage.io/v1alpha1
 kind: Dataset
 metadata:
-  name: Dataset4
-  title: Dataset4
-  description: Descrição4
+  name: Dataset7
+  title: Dataset7
+  description: Descrição7
   annotations:
     github.com/project-slug: joaocvr/ml-catalog-examples
   tags:
@@ -13,25 +13,19 @@ metadata:
       title: Dataset Repository
       icon: github
 spec:
-  type: raw
-  format: JSON
-  size: 4444MB
-  schema: |
-    Teste schema 4
+  type: training
+  format: HDF5
+  size: 777MB
+  
   location:
     type: s3
-    bucket: Bucket4
-    path: /datasets/dataset4
+    bucket: Bucket7
+    path: /datasets/dataset7
   owner: deia
   system: OLIMPIA
-  lifecycle: production
-  quality:
-    accuracy: 1
-    completeness: 1
-    
+  lifecycle: experimental
+  
   provenance:
-    source: Web4
-    version: 2.0.0
-  usage:
-    purpose: propósito 4
-    license: MIT4
+    
+    version: 1.0.0
+  
